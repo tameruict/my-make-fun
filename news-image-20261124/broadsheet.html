@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Tuesday 24 November 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1024px; height: 1024px; overflow: hidden;
+    background: #F5F1E8; color: #111827;
+    font-family: 'Inter', 'Segoe UI', 'DejaVu Sans', 'Liberation Sans', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 1024px; height: 1024px;
+    padding: 9px 17px 7px 17px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .top-bar {
+    display: flex; justify-content: space-between;
+    font-size: 9.5px; font-weight: 800; letter-spacing: 0.06em;
+    color: #B91C1C; padding-bottom: 2px; border-bottom: 2px solid #111827;
+  }
+  .top-right { color: #111827; }
+  .masthead { text-align: center; border-bottom: 1.5px solid #111827; padding: 1px 0 3px 0; }
+  .masthead h1 {
+    font-family: 'Georgia', 'Times New Roman', 'DejaVu Serif', serif;
+    font-size: 56px; line-height: 0.96; font-weight: 900; letter-spacing: -0.025em; color: #0F172A;
+  }
+  .deck {
+    font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;
+    font-size: 12px; color: #334155; margin-top: 2px;
+  }
+  .kpi-row {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;
+    padding: 4px 0; border-bottom: 1px solid #C8BFA8;
+  }
+  .kpi-item { border-left: 2px solid #94A3B8; padding-left: 7px; }
+  .kpi-item:first-child { border-left: none; padding-left: 0; }
+  .kpi-val { font-family: 'Georgia', 'Times New Roman', serif; font-size: 19px; font-weight: 900; line-height: 1.02; }
+  .kpi-lbl { font-size: 8.2px; line-height: 1.13; color: #334155; font-weight: 600; margin-top: 1px; }
+  .reg-bar { display: flex; height: 15px; margin-top: 3px; border-radius: 2px; overflow: hidden; }
+  .reg-seg {
+    color: #FFF; font-size: 8.3px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; letter-spacing: 0.03em;
+  }
+  .lead-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+    margin-top: 4px; padding-bottom: 5px; border-bottom: 1.5px solid #111827;
+  }
+  .lead-card { display: flex; flex-direction: column; gap: 3px; }
+  .lead-art { width: 100%; height: 104px; overflow: hidden; }
+  .kicker-line {
+    font-size: 8.3px; font-weight: 800; color: #B91C1C; letter-spacing: 0.04em;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .kicker-txt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .npill {
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 50%; color: #FFF; font-weight: 800; flex-shrink: 0;
+  }
+  .np-lead { width: 14px; height: 14px; font-size: 8.5px; background: #B91C1C; }
+  .np-feat { width: 13px; height: 13px; font-size: 7.5px; background: #1D4ED8; }
+  .lead-hl {
+    font-family: 'Georgia', 'Times New Roman', 'DejaVu Serif', serif;
+    font-size: 14.6px; line-height: 1.12; font-weight: 900; color: #0F172A;
+    max-height: 55px; overflow: hidden;
+  }
+  .lead-body {
+    font-size: 8.7px; line-height: 1.17; color: #1E293B;
+    max-height: 48px; overflow: hidden;
+  }
+  .src { color: #64748B; font-style: italic; font-weight: 600; }
+  .feat-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+    margin-top: 4px; padding-bottom: 5px; border-bottom: 1.5px solid #111827;
+  }
+  .feat-card { display: flex; flex-direction: column; gap: 2px; }
+  .feat-art { width: 100%; height: 67px; overflow: hidden; }
+  .kicker-sm {
+    font-size: 7.3px; font-weight: 800; color: #1E40AF; letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 3px; white-space: nowrap; overflow: hidden;
+  }
+  .feat-hl {
+    font-family: 'Georgia', 'Times New Roman', 'DejaVu Serif', serif;
+    font-size: 9.6px; line-height: 1.05; font-weight: 900; color: #0F172A;
+    max-height: 30px; overflow: hidden;
+  }
+  .feat-body {
+    font-size: 7.0px; line-height: 1.12; color: #334155;
+    max-height: 32px; overflow: hidden;
+  }
+  .bottom-band {
+    display: grid; grid-template-columns: 282px 1fr; gap: 12px; margin-top: 3px;
+  }
+  .sec-h {
+    font-size: 8.8px; font-weight: 900; letter-spacing: 0.05em; color: #0F172A;
+    margin-bottom: 3px; display: flex; justify-content: space-between;
+  }
+  .map-wrap { width: 282px; height: 144px; overflow: hidden; border-radius: 2px; }
+  .map-cap { font-size: 7.3px; color: #475569; margin-top: 2px; font-weight: 600; }
+  .bcols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .brow { font-size: 8.8px; line-height: 1.24; color: #1E293B; margin-bottom: 1.7px; }
+  .bnum {
+    display: inline-block; min-width: 14px; text-align: center;
+    background: #1E3A8A; color: #FFF; font-size: 7.2px; font-weight: 800;
+    border-radius: 2px; margin-right: 3px; padding: 0 2px;
+  }
+  .bsrc { color: #64748B; font-size: 7.6px; }
+  .date-check {
+    border: 1.4px solid #B91C1C; background: #FEF2F2;
+    padding: 3.5px 7px; font-size: 7.9px; line-height: 1.22; color: #7F1D1D;
+  }
+  .date-check b { color: #991B1B; letter-spacing: 0.03em; }
+  .colophon {
+    display: flex; justify-content: space-between;
+    font-size: 7.4px; color: #475569; font-weight: 600;
+    padding-top: 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="top-bar">
+        <span>THE WORLD IN ONE DAY</span>
+        <span class="top-right">35 SOURCED STORIES · 6 CONTINENTS · EVERY ONE DATED TUESDAY 24 NOVEMBER 2026</span>
+      </div>
+      <div class="masthead">
+        <h1>Tuesday 24 November 2026</h1>
+        <p class="deck">AI stocks surge · Korea airspace scramble · Gaza strike · NATO space warning · Global brief</p>
+      </div>
+      <div class="kpi-row">
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#047857">+9.1%</div>
+        <div class="kpi-lbl">ASIA TECH RALLY · TAIWAN LEADS ASIA REBOUND</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#B91C1C">3+</div>
+        <div class="kpi-lbl">GAZA STRIKE · KHAN YOUNIS CASUALTIES; ~2/3 CONTROLLED</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#1D4ED8">810,592</div>
+        <div class="kpi-lbl">US AUTO SAFETY · HONDA VEHICLES RECALLED (TAKATA)</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#B45309">180</div>
+        <div class="kpi-lbl">ZANZIBAR DISASTER · FOREIGN TOURISTS EVACUATED IN FIRE</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#6D28D9">7.3M</div>
+        <div class="kpi-lbl">FOOD AID CRISIS · CIVILIANS AT RISK AS WAR DRAINS WFP</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#0F766E">4.1</div>
+        <div class="kpi-lbl">PAKISTAN QUAKE · MAGNITUDE 4.1 JOLTS NORTHERN REGION</div>
+      </div>
+      </div>
+      <div class="reg-bar">
+<div class="reg-seg" style="width:20.0%;background:#1D4ED8">Europe 7</div>
+<div class="reg-seg" style="width:31.4%;background:#B91C1C">Asia-Pacific 11</div>
+<div class="reg-seg" style="width:22.9%;background:#6D28D9">Americas 8</div>
+<div class="reg-seg" style="width:11.4%;background:#047857">Africa 4</div>
+<div class="reg-seg" style="width:8.6%;background:#B45309">Middle East 3</div>
+<div class="reg-seg" style="width:5.7%;background:#0F766E">Oceania 2</div>
+      </div>
+    </header>
+
+    <section class="lead-grid">
+      <article class="lead-card">
+        <div class="lead-art"><svg viewBox="0 0 326 104" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="mkt-grad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#047857" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#10B981" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <rect width="326" height="104" fill="#064E3B"/>
+  <line x1="8" y1="34" x2="318" y2="34" stroke="#065F46" stroke-width="0.8"/>
+  <line x1="8" y1="56" x2="318" y2="56" stroke="#065F46" stroke-width="0.8"/>
+  <line x1="8" y1="78" x2="318" y2="78" stroke="#065F46" stroke-width="0.8"/>
+  <path d="M12 88 L46 80 L84 72 L120 76 L158 54 L196 50 L234 32 L274 24 L314 16 L314 104 L12 104 Z" fill="url(#mkt-grad)"/>
+  <path d="M12 88 L46 80 L84 72 L120 76 L158 54 L196 50 L234 32 L274 24 L314 16" stroke="#34D399" stroke-width="2.6" fill="none"/>
+  <circle cx="314" cy="16" r="4" fill="#6EE7B7" stroke="#FFF" stroke-width="1.2"/>
+  <rect x="0" y="0" width="168" height="23" fill="#047857"/>
+  <text x="84" y="16" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="12" font-weight="900">AI TECH REBOUND</text>
+  <g font-family="'Consolas', monospace" font-size="9" font-weight="700">
+    <rect x="206" y="6" width="114" height="17" rx="2" fill="#0F172A" opacity="0.9"/>
+    <text x="212" y="18" fill="#F8FAFC">Taiwan</text><text x="314" y="18" text-anchor="end" fill="#34D399">+9.1%</text>
+    <rect x="206" y="27" width="114" height="17" rx="2" fill="#0F172A" opacity="0.9"/>
+    <text x="212" y="39" fill="#F8FAFC">KOSPI</text><text x="314" y="39" text-anchor="end" fill="#34D399">+7.5%</text>
+    <rect x="206" y="48" width="114" height="17" rx="2" fill="#0F172A" opacity="0.9"/>
+    <text x="212" y="60" fill="#F8FAFC">Nikkei</text><text x="314" y="60" text-anchor="end" fill="#34D399">+4.5%</text>
+  </g>
+  <rect x="0" y="86" width="138" height="18" fill="#0F172A" opacity="0.92"/>
+  <text x="69" y="98" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="8" font-weight="700">MSCI Asia-Pac +4.6% · July High</text>
+</svg></div>
+        <div class="kicker-line"><span class="npill np-lead">1</span><span class="kicker-txt">MARKETS · ASIA-PACIFIC</span></div>
+        <h2 class="lead-hl">ASIA MARKETS ROAR BACK ON AI REBOUND; TAIWAN LEAPS +9.1%, KOSPI +7.5%</h2>
+        <p class="lead-body">Asian equities surged Tuesday following Wall Street&#x27;s tech rebound; MSCI Asia-Pacific ex-Japan rose +4.6% in its biggest single-day gain since July. Fed December rate hike odds firmed. (Context: Wall Street surged Monday with Nvidia +31.5% after Jensen Huang&#x27;s reinstatement). <span class="src">(Reuters)</span></p>
+      </article>
+      <article class="lead-card">
+        <div class="lead-art"><svg viewBox="0 0 326 104" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="326" height="104" fill="#0F172A"/>
+  <g stroke="#0284C7" stroke-width="0.8" fill="none" opacity="0.45">
+    <circle cx="163" cy="52" r="24"/>
+    <circle cx="163" cy="52" r="48"/>
+    <circle cx="163" cy="52" r="72"/>
+    <line x1="163" y1="4" x2="163" y2="100"/>
+    <line x1="8" y1="52" x2="318" y2="52"/>
+  </g>
+  <path d="M163 52 L225 18" stroke="#38BDF8" stroke-width="1.8" stroke-dasharray="4 2"/>
+  <g transform="translate(230,34)">
+    <circle r="14" fill="#EF4444" opacity="0.25"/>
+    <circle r="8" fill="#EF4444" opacity="0.5"/>
+    <circle r="3.5" fill="#EF4444" stroke="#FFF" stroke-width="1"/>
+  </g>
+  <text x="230" y="58" text-anchor="middle" fill="#FCA5A5" font-family="'Inter', sans-serif" font-size="7.5" font-weight="800">Ulleung Is.</text>
+  <path d="M110 74 L126 68 L122 72 L132 71 L124 75 L126 78 Z" fill="#94A3B8"/>
+  <path d="M130 84 L146 78 L142 82 L152 81 L144 85 L146 88 Z" fill="#94A3B8"/>
+  <rect x="0" y="0" width="168" height="23" fill="#B91C1C"/>
+  <text x="84" y="16" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="12" font-weight="900">AIRSPACE SCRAMBLE</text>
+  <rect x="206" y="6" width="114" height="17" rx="2" fill="#1E293B" opacity="0.95"/>
+  <text x="263" y="18" text-anchor="middle" fill="#FDE047" font-family="'Consolas', monospace" font-size="8.2" font-weight="700">F-15K / KF-16 ALERT</text>
+  <rect x="0" y="86" width="128" height="18" fill="#1E293B" opacity="0.92"/>
+  <text x="64" y="98" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="8" font-weight="700">Shelter Orders Issued</text>
+</svg></div>
+        <div class="kicker-line"><span class="npill np-lead">2</span><span class="kicker-txt">SECURITY · EAST ASIA</span></div>
+        <h2 class="lead-hl">KOREA SCRAMBLES JETS AFTER SUSPECTED NORTH KOREAN AIRSPACE BREACH</h2>
+        <p class="lead-body">South Korean fighters scrambled Tuesday as a suspected North Korean aircraft approached Ulleung Island; residents were ordered to shelters. Separately, jets scrambled as Russian warplanes entered Korea&#x27;s air defense identification zone. <span class="src">(TOI / Japan Times)</span></p>
+      </article>
+      <article class="lead-card">
+        <div class="lead-art"><svg viewBox="0 0 326 104" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="326" height="104" fill="#18181B"/>
+  <path d="M0 90 L32 90 L32 76 L52 76 L52 90 L90 90 L90 68 L114 68 L114 90 L180 90 L180 72 L210 72 L210 90 L260 90 L260 62 L285 62 L285 90 L326 90 L326 104 L0 104 Z" fill="#27272A"/>
+  <g transform="translate(142,62)">
+    <circle r="32" fill="#EA580C" opacity="0.25"/>
+    <circle r="20" fill="#DC2626" opacity="0.4"/>
+    <circle r="10" fill="#FBBF24" opacity="0.75"/>
+    <circle r="4" fill="#FFF"/>
+  </g>
+  <circle cx="142" cy="62" r="14" fill="none" stroke="#F87171" stroke-width="1.2" stroke-dasharray="3 3"/>
+  <rect x="0" y="0" width="168" height="23" fill="#B91C1C"/>
+  <text x="84" y="16" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="12" font-weight="900">KHAN YOUNIS STRIKE</text>
+  <rect x="206" y="6" width="114" height="17" rx="2" fill="#27272A" opacity="0.95"/>
+  <text x="263" y="18" text-anchor="middle" fill="#FDE047" font-family="'Consolas', monospace" font-size="8.2" font-weight="700">~2/3 GAZA CONTROLLED</text>
+  <rect x="0" y="86" width="124" height="18" fill="#27272A" opacity="0.92"/>
+  <text x="62" y="98" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="8" font-weight="700">Police Outpost Target</text>
+</svg></div>
+        <div class="kicker-line"><span class="npill np-lead">3</span><span class="kicker-txt">MIDDLE EAST · GAZA STRIP</span></div>
+        <h2 class="lead-hl">ISRAELI AIRSTRIKE KILLS AT LEAST 3 IN KHAN YOUNIS; TROOPS CONTROL 2/3 OF GAZA</h2>
+        <p class="lead-body">An Israeli airstrike killed at least three Palestinians near a police outpost in Khan Younis on Tuesday; Israeli ground forces consolidated operational control over approximately two-thirds of the Gaza Strip. <span class="src">(Reuters)</span></p>
+      </article>
+    </section>
+
+    <section class="feat-grid">
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#EFF6FF"/>
+  <circle cx="96" cy="34" r="20" fill="#DBEAFE"/>
+            <path d="M80 44 L112 24" stroke="#1D4ED8" stroke-width="2.5"/>
+            <circle cx="112" cy="24" r="4" fill="#DC2626"/>
+  <rect x="0" y="0" width="144" height="17" fill="#1D4ED8"/>
+  <text x="6" y="12.2" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900">KYIV REGION STRIKES</text>
+  <rect x="42" y="52" width="150" height="15" fill="#0F172A" opacity="0.9"/>
+  <text x="117" y="62.5" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700">Emergency Toll Updating</text>
+</svg></div>
+        <div class="kicker-sm"><span class="npill np-feat">4</span><span class="kicker-txt">EUROPE · UKRAINE</span></div>
+        <h3 class="feat-hl">RUSSIAN STRIKES HIT KYIV REGION; OFFICIALS REPORT TOLL UPDATING</h3>
+        <p class="feat-body">Emergency services confirm fresh missile strikes on Kyiv region Tuesday with search operations ongoing; casualty figures updating from weekend barrages. <span class="src">(State Emergency Service / Reuters)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#EFF6FF"/>
+  <circle cx="96" cy="34" r="16" fill="none" stroke="#2563EB" stroke-width="1.8" stroke-dasharray="3 2"/>
+            <circle cx="96" cy="34" r="5" fill="#1E3A8A"/>
+            <circle cx="110" cy="26" r="3" fill="#DC2626"/>
+  <rect x="0" y="0" width="144" height="17" fill="#1E40AF"/>
+  <text x="6" y="12.2" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900">NATO · SPACE DEFENSE</text>
+  <rect x="42" y="52" width="150" height="15" fill="#0F172A" opacity="0.9"/>
+  <text x="117" y="62.5" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700">Mark Rutte Talks Wed</text>
+</svg></div>
+        <div class="kicker-sm"><span class="npill np-feat">5</span><span class="kicker-txt">DIPLOMACY · NATO</span></div>
+        <h3 class="feat-hl">TRUMP TO MEET NATO CHIEF RUTTE AS ALLIES WARN OF RUSSIAN SPACE WEAPON</h3>
+        <p class="feat-body">Donald Trump is scheduled to meet NATO Secretary General Mark Rutte Wednesday in Florida; allies warn Russia could deploy an orbital anti-satellite nuclear device next month. <span class="src">(Reuters / SCMP)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#FEF2F2"/>
+  <path d="M76 44 L96 22 L116 44 Z" fill="#94A3B8"/>
+            <rect x="88" y="32" width="16" height="12" fill="#475569"/>
+  <rect x="0" y="0" width="144" height="17" fill="#B91C1C"/>
+  <text x="6" y="12.2" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900">US HOUSE RESIGNATION</text>
+  <rect x="42" y="52" width="150" height="15" fill="#0F172A" opacity="0.9"/>
+  <text x="117" y="62.5" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700">Ethics Panel Findings</text>
+</svg></div>
+        <div class="kicker-sm"><span class="npill np-feat">6</span><span class="kicker-txt">POLITICS · UNITED STATES</span></div>
+        <h3 class="feat-hl">REP. JIMMY GOMEZ RESIGNS FOLLOWING ETHICS MISCONDUCT FINDINGS</h3>
+        <p class="feat-body">California Representative Jimmy Gomez resigned his congressional seat Tuesday after a bipartisan House Ethics Committee report found substantial evidence of sexual misconduct with a staffer. <span class="src">(TOI)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#FFFBEB"/>
+  <rect x="82" y="26" width="28" height="18" rx="2" fill="#D97706"/>
+            <line x1="96" y1="20" x2="96" y2="26" stroke="#451A03" stroke-width="2"/>
+  <rect x="0" y="0" width="144" height="17" fill="#B45309"/>
+  <text x="6" y="12.2" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900">IOWA PLANT EXPLOSIVES</text>
+  <rect x="42" y="52" width="150" height="15" fill="#0F172A" opacity="0.9"/>
+  <text x="117" y="62.5" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700">White House Halts Blast</text>
+</svg></div>
+        <div class="kicker-sm"><span class="npill np-feat">7</span><span class="kicker-txt">COURTS · UNITED STATES</span></div>
+        <h3 class="feat-hl">TRUMP HALTS IOWA EXPLOSIVES DEMOLITION PENDING COURT REVIEW</h3>
+        <p class="feat-body">The White House paused the planned detonation of degraded ordnance at Iowa&#x27;s Middletown Army Ammunition Plant pending legal review; a separate order directed federal executions to be expedited. <span class="src">(AFP)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#F5F3FF"/>
+  <circle cx="86" cy="34" r="6" fill="#7C3AED"/>
+            <circle cx="106" cy="34" r="6" fill="#7C3AED"/>
+            <line x1="86" y1="34" x2="106" y2="34" stroke="#4C1D95" stroke-width="2"/>
+  <rect x="0" y="0" width="144" height="17" fill="#6D28D9"/>
+  <text x="6" y="12.2" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900">STATES SUE xAI (GROK)</text>
+  <rect x="42" y="52" width="150" height="15" fill="#0F172A" opacity="0.9"/>
+  <text x="117" y="62.5" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700">AI Deepfake Litigation</text>
+</svg></div>
+        <div class="kicker-sm"><span class="npill np-feat">8</span><span class="kicker-txt">TECH LAW · UNITED STATES</span></div>
+        <h3 class="feat-hl">US STATES SUE ELON MUSK&#x27;S X OVER AI-GENERATED SEXUALIZED IMAGES</h3>
+        <p class="feat-body">State attorneys general filed suit against xAI and X Corp, alleging failure to halt the proliferation of non-consensual sexualized deepfakes generated by the Grok chatbot. <span class="src">(Reuters)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#ECFDF5"/>
+  <circle cx="96" cy="34" r="14" fill="#059669"/>
+            <circle cx="96" cy="34" r="6" fill="#DC2626"/>
+  <rect x="0" y="0" width="144" height="17" fill="#047857"/>
+  <text x="6" y="12.2" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900">BANGLADESH POLITICS</text>
+  <rect x="42" y="52" width="150" height="15" fill="#0F172A" opacity="0.9"/>
+  <text x="117" y="62.5" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700">Hasina Dhaka Plan Dec 16</text>
+</svg></div>
+        <div class="kicker-sm"><span class="npill np-feat">9</span><span class="kicker-txt">SOUTH ASIA · BANGLADESH</span></div>
+        <h3 class="feat-hl">OUSTED BANGLADESH PM SHEIKH HASINA PLANS RETURN HOME DEC 16</h3>
+        <p class="feat-body">A spokesperson for exiled former Prime Minister Sheikh Hasina stated she plans to return to Dhaka from India on December 16, despite facing active domestic arrest warrants. <span class="src">(Reuters)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#FEF2F2"/>
+  <circle cx="96" cy="34" r="16" fill="none" stroke="#DC2626" stroke-width="1.8"/>
+            <line x1="96" y1="16" x2="96" y2="52" stroke="#DC2626" stroke-width="1.2"/>
+            <line x1="78" y1="34" x2="114" y2="34" stroke="#DC2626" stroke-width="1.2"/>
+  <rect x="0" y="0" width="144" height="17" fill="#DC2626"/>
+  <text x="6" y="12.2" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900">KHARTOUM DRONE STRIKE</text>
+  <rect x="42" y="52" width="150" height="15" fill="#0F172A" opacity="0.9"/>
+  <text x="117" y="62.5" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700">4 Dead · UN Facility Hit</text>
+</svg></div>
+        <div class="kicker-sm"><span class="npill np-feat">10</span><span class="kicker-txt">AFRICA · SUDAN</span></div>
+        <h3 class="feat-hl">DRONES HIT HOMES AND UN COMPOUND IN KHARTOUM; AT LEAST 4 KILLED</h3>
+        <p class="feat-body">Aerial drone strikes struck residential quarters and a United Nations facility in Khartoum on Tuesday, killing at least four civilians and wounding nine others. <span class="src">(AFP)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#F0FDFA"/>
+  <rect x="78" y="28" width="36" height="14" rx="2" fill="#F59E0B" stroke="#B45309" stroke-width="1"/>
+            <text x="96" y="38" text-anchor="middle" fill="#78350F" font-family="'Consolas', monospace" font-size="8" font-weight="800">$3,657</text>
+  <rect x="0" y="0" width="144" height="17" fill="#0F766E"/>
+  <text x="6" y="12.2" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900">DOLLAR 20M HIGH · GOLD</text>
+  <rect x="42" y="52" width="150" height="15" fill="#0F172A" opacity="0.9"/>
+  <text x="117" y="62.5" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700">Gold Rebound $3,657/oz</text>
+</svg></div>
+        <div class="kicker-sm"><span class="npill np-feat">11</span><span class="kicker-txt">COMMODITIES · GLOBAL</span></div>
+        <h3 class="feat-hl">DOLLAR HOVERS NEAR 20-MONTH HIGH AS GOLD BOUNCES TO $3,657/OZ</h3>
+        <p class="feat-body">The US dollar hovered near a 20-month peak on firming Fed rate expectations; spot gold rebounded from 14-month lows to $3,657/oz while Brent crude held at $89.50/bbl. <span class="src">(Reuters)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#F0FDF4"/>
+  <circle cx="96" cy="34" r="14" fill="#FFF" stroke="#1E293B" stroke-width="1.5"/>
+            <path d="M96 26 L102 31 L100 38 L92 38 L90 31 Z" fill="#1E293B"/>
+  <rect x="0" y="0" width="144" height="17" fill="#047857"/>
+  <text x="6" y="12.2" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900">2031 WOMEN&#x27;S WORLD CUP</text>
+  <rect x="42" y="52" width="150" height="15" fill="#0F172A" opacity="0.9"/>
+  <text x="117" y="62.5" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700">US / MEX / CR / JAM Host</text>
+</svg></div>
+        <div class="kicker-sm"><span class="npill np-feat">12</span><span class="kicker-txt">SPORT · GLOBAL</span></div>
+        <h3 class="feat-hl">US, MEXICO, COSTA RICA &amp; JAMAICA TO CO-HOST 2031 WOMEN&#x27;S WORLD CUP</h3>
+        <p class="feat-body">FIFA confirmed a joint North and Central American bid will host the 2031 Women&#x27;s World Cup, with the UK awarded the 2035 tournament (announced late Mon 21:36 UTC / Tue Asia-Pacific; FIFA). <span class="src">(FIFA / Reuters)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#EEF2FF"/>
+  <rect x="76" y="24" width="40" height="20" rx="3" fill="#1E1B4B"/>
+            <text x="82" y="37" fill="#38BDF8" font-family="'Consolas', monospace" font-size="9" font-weight="800">&gt;_</text>
+  <rect x="0" y="0" width="144" height="17" fill="#4338CA"/>
+  <text x="6" y="12.2" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900">ANTHROPIC CLAUDE SHIP</text>
+  <rect x="42" y="52" width="150" height="15" fill="#0F172A" opacity="0.9"/>
+  <text x="117" y="62.5" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="7.5" font-weight="700">Automated Code Review</text>
+</svg></div>
+        <div class="kicker-sm"><span class="npill np-feat">13</span><span class="kicker-txt">ARTIFICIAL INTELLIGENCE</span></div>
+        <h3 class="feat-hl">ANTHROPIC LAUNCHES &#x27;CLAUDE SHIP&#x27; AI TOOL FOR CODE REVIEW AUTOMATION</h3>
+        <p class="feat-body">Anthropic released Claude Ship, an automated developer agent designed to inspect software pull requests, detect vulnerabilities, and enforce testing standards. <span class="src">(TechCrunch)</span></p>
+      </article>
+    </section>
+
+    <section class="bottom-band">
+      <div>
+        <div class="sec-h"><span>WHERE IT HAPPENED</span><span style="color:#64748B;">PINS 1–13</span></div>
+        <div class="map-wrap"><svg viewBox="0 0 282 144" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <rect width="282" height="144" fill="#EFECE2" stroke="#C8BFA8" stroke-width="0.8"/>
+    <path d="M26 16 L72 14 L98 20 L93 34 L84 46 L68 54 L61 63 L55 59 L46 47 L35 38 L24 29 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M100 6 L120 6 L115 21 L102 19 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M68 64 L89 67 L104 80 L97 100 L84 123 L76 124 L70 98 L64 76 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M127 18 L163 15 L173 25 L167 36 L147 39 L131 38 L126 29 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M127 23 L133 22 L132 30 L126 29 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M129 42 L158 42 L170 55 L164 78 L154 102 L144 101 L136 78 L125 58 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M165 16 L232 14 L258 24 L249 41 L230 50 L217 61 L204 62 L191 54 L172 46 L164 36 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M247 35 L252 32 L253 41 L247 43 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M219 66 L233 66 L236 72 L221 72 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M226 83 L254 83 L257 103 L239 107 L225 99 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M267 104 L274 102 L272 114 L265 113 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <circle cx="164.9" cy="30.4" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="164.9" y="32.5" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">4</text><circle cx="144.4" cy="30.0" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="144.4" y="32.1" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">5</text><circle cx="80.7" cy="42.3" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="80.7" y="44.4" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">6</text><circle cx="69.6" cy="40.3" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="69.6" y="42.4" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">7</text><circle cx="45.1" cy="43.5" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="45.1" y="45.6" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">8</text><circle cx="211.8" cy="57.8" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="211.8" y="59.9" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">9</text><circle cx="166.5" cy="66.3" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="166.5" y="68.39999999999999" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">10</text><circle cx="83.0" cy="40.4" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="83.0" y="42.5" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">11</text><circle cx="78.2" cy="55.7" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="78.2" y="57.800000000000004" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">12</text><circle cx="49.6" cy="39.9" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="49.6" y="42.0" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">13</text><circle cx="236.2" cy="56.6" r="6.4" fill="#B91C1C" stroke="#FFF" stroke-width="1.0"/><text x="236.2" y="59.0" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="7.2" font-weight="800">1</text><circle cx="243.5" cy="43.7" r="6.4" fill="#B91C1C" stroke="#FFF" stroke-width="1.0"/><text x="243.5" y="46.1" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="7.2" font-weight="800">2</text><circle cx="167.9" cy="50.1" r="6.4" fill="#B91C1C" stroke="#FFF" stroke-width="1.0"/><text x="167.9" y="52.5" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="7.2" font-weight="800">3</text>
+  </svg></div>
+        <div class="map-cap">Each pin marks a featured story (1–13) on this page.</div>
+      </div>
+      <div>
+        <div class="sec-h"><span>ALSO ON TUESDAY 24 NOVEMBER — 22 MORE STORIES</span><span style="color:#64748B;">WORLD BRIEFS 14–35</span></div>
+        <div class="bcols">
+          <div><div class="brow"><span class="bnum">14</span><b>London</b> Court sentences GTA VI hacker Kurtaj to 7 years, frees him on time served; concert evacuated. <span class="bsrc">(SCMP)</span></div>
+<div class="brow"><span class="bnum">15</span><b>Pakistan</b> Magnitude 4.1 earthquake strikes northern Pakistan; NCS reports no immediate casualties. <span class="bsrc">(NCS)</span></div>
+<div class="brow"><span class="bnum">16</span><b>Zanzibar</b> Fire ravages six beach hotels; emergency teams evacuate 180 foreign tourists. <span class="bsrc">(AFP)</span></div>
+<div class="brow"><span class="bnum">17</span><b>Louisiana</b> Amtrak train carrying 95 passengers derails after collision with semitruck; 5 injured. <span class="bsrc">(AP)</span></div>
+<div class="brow"><span class="bnum">18</span><b>Washington</b> Honda recalls 810,592 vehicles nationwide due to Takata airbag inflator rupture hazard. <span class="bsrc">(NHTSA)</span></div>
+<div class="brow"><span class="bnum">19</span><b>Indonesia</b> Rescuers recover additional victims from candy factory fire; 34 workers unaccounted for. <span class="bsrc">(Reuters)</span></div>
+<div class="brow"><span class="bnum">20</span><b>Beijing</b> State security court sentences senior official to death for leaking classified state secrets. <span class="bsrc">(AP)</span></div>
+<div class="brow"><span class="bnum">21</span><b>Istanbul</b> Thousands march in Istanbul and Ankara protesting government shutdown of independent media. <span class="bsrc">(AFP)</span></div>
+<div class="brow"><span class="bnum">22</span><b>Paris</b> Macron floats constitutional amendments to enforce deficit caps; 3 detained over rail derailment. <span class="bsrc">(Le Monde)</span></div>
+<div class="brow"><span class="bnum">23</span><b>Berlin</b> Coordinated bomb threat emails target schools across three states; police assess hoax risk. <span class="bsrc">(DPA)</span></div>
+<div class="brow"><span class="bnum">24</span><b>London</b> NHS launches world&#x27;s largest clinical trial evaluating AI-assisted breast cancer screening. <span class="bsrc">(Guardian)</span></div></div>
+          <div><div class="brow"><span class="bnum">25</span><b>Warsaw</b> Intelligence agencies report thwarting two Russian assassination attempts on Ukrainian rapper. <span class="bsrc">(PAP)</span></div>
+<div class="brow"><span class="bnum">26</span><b>Havana</b> WHO Director-General arrives in Havana as island&#x27;s public healthcare infrastructure nears collapse. <span class="bsrc">(AP)</span></div>
+<div class="brow"><span class="bnum">27</span><b>Rome</b> WFP warns escalating global conflicts threaten emergency food rations for 7.3 million civilians. <span class="bsrc">(UN News)</span></div>
+<div class="brow"><span class="bnum">28</span><b>Jakarta</b> Former national police inspector general indicted on treason charges over coup plot allegation. <span class="bsrc">(Antara)</span></div>
+<div class="brow"><span class="bnum">29</span><b>New Delhi</b> Nepalese Prime Minister opens bilateral summit focusing on hydroelectric power trade. <span class="bsrc">(PTI)</span></div>
+<div class="brow"><span class="bnum">30</span><b>Pyongyang</b> Pyongyang threatens closure of Swiss diplomatic representation in retaliatory measure. <span class="bsrc">(AFP)</span></div>
+<div class="brow"><span class="bnum">31</span><b>Tokyo</b> Manufacturing sector expands into positive territory; flash PMI reaches 53.7 in November. <span class="bsrc">(S&amp;P Global)</span></div>
+<div class="brow"><span class="bnum">32</span><b>Seoul</b> Bank of Korea widely anticipated to raise benchmark interest rate to 3.25% at Thursday meeting. <span class="bsrc">(Reuters Poll)</span></div>
+<div class="brow"><span class="bnum">33</span><b>Honiara</b> Ex-PM Sogavare cautions government against abandoning security cooperation with Beijing. <span class="bsrc">(RNZ)</span></div>
+<div class="brow"><span class="bnum">34</span><b>Sydney</b> New South Wales health registry reports record number of voluntary assisted deaths in annual data. <span class="bsrc">(SMH)</span></div>
+<div class="brow"><span class="bnum">35</span><b>Namibia</b> CTBTO concludes 7-week, 60-nation on-site nuclear inspection exercise in Namibian desert. <span class="bsrc">(CTBTO)</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="date-check">
+        <b>DATE DISCIPLINE (EXCLUDED FROM STORIES):</b> Events occurring prior to Tuesday 24 Nov 2026 are excluded from numbered stories: COP31 climate conference collapse (Sun 22 Nov), Nvidia CEO reinstatement announcement (Mon 23 Nov; Tuesday market response shown in #1), Ukraine strike on Russian warship off Libya (Mon 23 Nov), and Dymer apartment strike toll of 11 (Sun 22 Nov).
+      </div>
+      <div class="colophon">
+        <span>Every story happened or was first reported on Tuesday 24 November 2026. Officials' counts &amp; claims attributed.</span>
+        <span>Sources: Reuters · AP · AFP · TOI · SCMP · TechCrunch · S&amp;P Global · NHTSA · NCS · Original drawings</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

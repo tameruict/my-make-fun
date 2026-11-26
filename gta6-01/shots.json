@@ -1,0 +1,6 @@
+[
+  { "name": "1-cover.jpg", "query": "?shot=cover&seed=1" },
+  { "name": "2-onfoot.jpg", "query": "?shot=onfoot&seed=1" },
+  { "name": "3-map.jpg", "query": "?shot=map&seed=1" },
+  { "name": "4-customs.jpg", "query": "?shot=customs&seed=1" }
+]

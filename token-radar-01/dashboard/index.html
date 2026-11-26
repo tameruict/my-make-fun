@@ -1,0 +1,35 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Launch Radar v4 — fitted value, peers' token odds, netted farm verdicts</title><link rel="stylesheet" href="app.css"></head><body>
+<header class="top"><div><h1>Launch Radar v4 <span>&mdash; fitted value, peers' token odds, netted farm verdicts</span></h1><p id="sub" class="sub"></p></div><nav class="tabs" id="tabs"><button data-tab="board" class="on">Board <small id="t-board"></small></button><button data-tab="comparables">Comparables <small id="t-comps"></small></button></nav></header>
+<div id="nodata" class="nodata" hidden>No data</div>
+<section id="kpis" class="kpis"></section>
+<p id="integrity" class="strip"></p>
+<p id="ledger" class="strip ledger"></p>
+<main>
+<section id="v-board" class="view">
+<div class="evpanel" id="evpanel"><div class="evf" id="ev-eq"></div><div class="evgrid">
+<div class="evcol"><div class="evh"><b>Fitted vs Actual Cap</b><small id="scat-sub"></small></div><div id="scatter" class="scatter"><div class="sdiag"></div><span class="syl" id="syl"></span><span class="sxl" id="sxl"></span></div></div>
+<div class="evcol"><div class="evh"><b>Value Stepwise &mdash; LOO, WF &amp; 5F-Size CV</b><small id="vt-sum"></small></div><table id="vterms"></table></div>
+<div class="evcol"><div class="evh"><b>Token Odds &mdash; 10F &amp; WF Brier</b><small id="ot-sum"></small></div><table id="oterms"></table><div class="evh evh2"><b>Walk-Forward Range Honesty</b><small id="rh-sum"></small></div><table id="rhon"></table></div>
+</div></div>
+<div class="controls">
+<input id="q" type="search" placeholder="Search name, slug, category">
+<select id="tier"><option value="all">All tiers</option><option value="top10">Top 10</option><option value="watchlist">Watchlist only</option><option value="early">Early (&lt;$50M)</option><option value="off-list-parent">Off-list (rule)</option></select>
+<select id="cat"><option value="">All categories</option></select>
+<select id="verdict"><option value="">All verdicts</option><option value="FARM">FARM</option><option value="MARGINAL">MARGINAL</option><option value="SKIP">SKIP</option><option value="ROBUST">ROBUST (P25)</option></select>
+<label>Deposit <select id="dep"><option value="">default</option></select></label>
+<label>Horizon <select id="hz"><option value="">default</option><option value="30">30d</option><option value="45">45d</option><option value="60">60d</option></select></label>
+<label>Drop <select id="ds"><option value="0.03">3%</option><option value="0.05" selected>5%</option><option value="0.07">7%</option><option value="0.10">10%</option></select></label>
+<label>Farmers <select id="fp"><option value="0.05">5%</option><option value="0.10" selected>10%</option><option value="0.15">15%</option><option value="0.20">20%</option></select></label>
+<button id="exp-csv" class="btn" type="button">CSV</button><button id="exp-json" class="btn" type="button">JSON</button>
+<span id="count" class="count"></span>
+</div>
+<div class="wrap" id="bwrap"><table id="board"><thead><tr><th data-k="rank">Rank</th><th data-k="name">Protocol</th><th data-k="category">Category</th><th data-k="tvl_usd" class="n">TVL</th><th data-k="change_7d" class="n">7d</th><th data-k="token_odds" class="n">Token odds</th><th data-k="if_launches_usd" class="n">If it launches</th><th data-k="implied_value_usd" class="n">Implied (P25-P75)</th><th data-k="v">Verdict</th><th data-k="net" class="n">Net $</th><th data-k="nph" class="n">Net/hour</th></tr></thead><tbody></tbody></table></div>
+<section id="detail" class="detail" hidden></section>
+</section>
+<section id="v-comparables" class="view" hidden>
+<p id="comphead" class="vhead"></p>
+<div class="wrap cwrap"><table id="comps"><thead><tr><th data-k="i">#</th><th data-k="name">Protocol</th><th data-k="category">Category</th><th data-k="tvl_usd" class="n">TVL</th><th data-k="mcap_usd" class="n">Market cap</th><th data-k="ratio" class="n">Cap / TVL</th><th data-k="fitted_if_launches_usd" class="n">Fitted value</th><th data-k="residual_fold" class="n">Miss</th><th data-k="listed_at">Listed</th></tr></thead><tbody></tbody></table></div>
+</section>
+</main>
+<script src="farm.js"></script><script src="model.js"></script><script src="../data.js"></script><script src="app.js"></script>
+</body></html>

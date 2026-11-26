@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Wednesday 25 November 2026</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    width: 1024px; height: 1024px; overflow: hidden;
+    background: #F5F1E8; color: #111827;
+    font-family: 'Inter', 'Segoe UI', 'DejaVu Sans', 'Liberation Sans', Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .page {
+    width: 1024px; height: 1024px;
+    padding: 8px 17px 7px 17px;
+    display: flex; flex-direction: column; justify-content: space-between;
+  }
+  .top-bar {
+    display: flex; justify-content: space-between;
+    font-size: 9.5px; font-weight: 800; letter-spacing: 0.06em;
+    color: #B91C1C; padding-bottom: 2px; border-bottom: 2px solid #111827;
+  }
+  .top-right { color: #111827; }
+  .masthead { text-align: center; border-bottom: 1.5px solid #111827; padding: 1px 0 2px 0; }
+  .masthead h1 {
+    font-family: 'Georgia', 'Times New Roman', 'DejaVu Serif', serif;
+    font-size: 56px; line-height: 0.96; font-weight: 900; letter-spacing: -0.025em; color: #0F172A;
+  }
+  .deck {
+    font-family: 'Georgia', 'Times New Roman', serif; font-style: italic;
+    font-size: 12px; color: #334155; margin-top: 2px;
+  }
+  .kpi-row {
+    display: grid; grid-template-columns: repeat(6, 1fr); gap: 8px;
+    padding: 3px 0; border-bottom: 1px solid #C8BFA8;
+  }
+  .kpi-item { border-left: 2px solid #94A3B8; padding-left: 7px; }
+  .kpi-item:first-child { border-left: none; padding-left: 0; }
+  .kpi-val { font-family: 'Georgia', 'Times New Roman', serif; font-size: 19px; font-weight: 900; line-height: 1.02; }
+  .kpi-lbl { font-size: 8.2px; line-height: 1.13; color: #334155; font-weight: 600; margin-top: 1px; }
+  .reg-bar { display: flex; height: 15px; margin-top: 2px; border-radius: 2px; overflow: hidden; }
+  .reg-seg {
+    color: #FFF; font-size: 8.3px; font-weight: 800;
+    display: flex; align-items: center; justify-content: center; letter-spacing: 0.03em;
+  }
+  .lead-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;
+    margin-top: 3px; padding-bottom: 4px; border-bottom: 1.5px solid #111827;
+  }
+  .lead-card { display: flex; flex-direction: column; gap: 3px; }
+  .lead-art { width: 100%; height: 104px; overflow: hidden; }
+  .kicker-line {
+    font-size: 8.3px; font-weight: 800; color: #B91C1C; letter-spacing: 0.04em;
+    display: flex; align-items: center; gap: 4px;
+  }
+  .kicker-txt { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .npill {
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 50%; color: #FFF; font-weight: 800; flex-shrink: 0;
+  }
+  .np-lead { width: 14px; height: 14px; font-size: 8.5px; background: #B91C1C; }
+  .np-feat { width: 13px; height: 13px; font-size: 7.5px; background: #1D4ED8; }
+  .lead-hl {
+    font-family: 'Georgia', 'Times New Roman', 'DejaVu Serif', serif;
+    font-size: 14.6px; line-height: 1.12; font-weight: 900; color: #0F172A;
+    max-height: 55px; overflow: hidden;
+  }
+  .lead-body {
+    font-family: 'Inter', 'Segoe UI', 'DejaVu Sans', 'Liberation Sans', Arial, sans-serif;
+    font-size: 8.7px; line-height: 1.17; color: #1E293B;
+    max-height: 48px; overflow: hidden;
+  }
+  .src { color: #64748B; font-style: italic; font-weight: 600; }
+  .feat-grid {
+    display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px;
+    margin-top: 3px; padding-bottom: 4px; border-bottom: 1.5px solid #111827;
+  }
+  .feat-card { display: flex; flex-direction: column; gap: 2px; }
+  .feat-art { width: 100%; height: 67px; overflow: hidden; }
+  .kicker-sm {
+    font-size: 7.3px; font-weight: 800; color: #1E40AF; letter-spacing: 0.02em;
+    display: flex; align-items: center; gap: 3px; white-space: nowrap; overflow: hidden;
+  }
+  .feat-hl {
+    font-family: 'Georgia', 'Times New Roman', 'DejaVu Serif', serif;
+    font-size: 9.6px; line-height: 1.05; font-weight: 900; color: #0F172A;
+    max-height: 30px; overflow: hidden;
+  }
+  .feat-body {
+    font-family: 'Inter', 'Segoe UI', 'DejaVu Sans', 'Liberation Sans', Arial, sans-serif;
+    font-size: 7.0px; line-height: 1.12; color: #334155;
+    max-height: 32px; overflow: hidden;
+  }
+  .bottom-band {
+    display: grid; grid-template-columns: 282px 1fr; gap: 12px; margin-top: 2px;
+  }
+  .sec-h {
+    font-size: 8.8px; font-weight: 900; letter-spacing: 0.05em; color: #0F172A;
+    margin-bottom: 2px; display: flex; justify-content: space-between;
+  }
+  .map-wrap { width: 282px; height: 144px; overflow: hidden; border-radius: 2px; }
+  .map-cap { font-size: 7.3px; color: #475569; margin-top: 2px; font-weight: 600; }
+  .bcols { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .brow { font-size: 7.8px; line-height: 1.18; color: #1E293B; margin-bottom: 1.0px; }
+  .bnum {
+    display: inline-block; min-width: 13px; text-align: center;
+    background: #1E3A8A; color: #FFF; font-size: 6.8px; font-weight: 800;
+    border-radius: 2px; margin-right: 2px; padding: 0 1px;
+  }
+  .bsrc { color: #64748B; font-size: 7.0px; }
+  .date-check {
+    border: 1.4px solid #B91C1C; background: #FEF2F2; color: #7F1D1D;
+    font-size: 7.2px; line-height: 1.16; padding: 2.5px 6px;
+  }
+  .date-check b { color: #991B1B; letter-spacing: 0.03em; }
+  .colophon {
+    display: flex; justify-content: space-between;
+    font-size: 7.4px; color: #475569; font-weight: 600;
+    padding-top: 2px;
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="top-bar">
+        <span>THE WORLD IN ONE DAY</span>
+        <span class="top-right">35 SOURCED STORIES · 6 CONTINENTS</span>
+      </div>
+      <div class="masthead">
+        <h1>Wednesday 25 November 2026</h1>
+        <p class="deck">Huawei convicted 10/12 · Cartagena 25-hostage siege · Aus CPI 4.9%</p>
+      </div>
+      <div class="kpi-row">
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#B91C1C">4.9%</div>
+        <div class="kpi-lbl">AUSTRALIA OCT CPI · ELECTRICITY +25.2%</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#1D4ED8">10 of 12</div>
+        <div class="kpi-lbl">HUAWEI GUILTY COUNTS · NY JURY VERDICT</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#B45309">25</div>
+        <div class="kpi-lbl">CARTAGENA HOSTAGES · SUPERMARKET SIEGE</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#6D28D9">700,000+</div>
+        <div class="kpi-lbl">RUSSIAN WAR DEAD · RFE/RL WED ANALYSIS</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#0F766E">$3,545</div>
+        <div class="kpi-lbl">SPOT GOLD / OZ · WED 00:24 GMT (-0.3%)</div>
+      </div>
+      <div class="kpi-item">
+        <div class="kpi-val" style="color:#047857">65,000</div>
+        <div class="kpi-lbl">NIKKEI 225 TARGET · REUTERS POLL, JUN 2027</div>
+      </div>
+      </div>
+      <div class="reg-bar">
+        <div class="reg-seg" style="width:17.1%; background:#1D4ED8;">Europe 6</div>
+        <div class="reg-seg" style="width:31.4%; background:#B91C1C;">Asia-Pacific 11</div>
+        <div class="reg-seg" style="width:25.7%; background:#6D28D9;">Americas 9</div>
+        <div class="reg-seg" style="width:8.6%; background:#047857;">Africa 3</div>
+        <div class="reg-seg" style="width:11.4%; background:#B45309;">Middle East 4</div>
+        <div class="reg-seg" style="width:5.8%; background:#0F766E;">Oceania 2</div>
+      </div>
+    </header>
+
+    <section class="lead-grid">
+      <article class="lead-card">
+        <div class="lead-art"><svg viewBox="0 0 326 104" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="326" height="104" fill="#0F172A"/>
+  <line x1="10" y1="30" x2="316" y2="30" stroke="#1E293B" stroke-width="0.8"/>
+  <line x1="10" y1="84" x2="316" y2="84" stroke="#1E293B" stroke-width="0.8"/>
+  <rect x="0" y="0" width="220" height="20" fill="#B91C1C"/>
+  <text x="110" y="14" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900" letter-spacing="0.04em">BROOKLYN FEDERAL VERDICT · HUAWEI</text>
+  
+  <!-- Scales of justice & gavel symbol -->
+  <g stroke="#F59E0B" stroke-width="1.8" fill="none">
+    <line x1="75" y1="34" x2="75" y2="76"/>
+    <line x1="50" y1="42" x2="100" y2="42"/>
+    <line x1="50" y1="42" x2="42" y2="58"/>
+    <line x1="50" y1="42" x2="58" y2="58"/>
+    <line x1="100" y1="42" x2="92" y2="58"/>
+    <line x1="100" y1="42" x2="108" y2="58"/>
+    <path d="M38 58 Q50 64 62 58 Z" fill="#F59E0B" opacity="0.6"/>
+    <path d="M88 58 Q100 64 112 58 Z" fill="#F59E0B" opacity="0.6"/>
+    <line x1="60" y1="76" x2="90" y2="76" stroke-width="2.5"/>
+  </g>
+  <!-- Gavel -->
+  <g transform="translate(18, 48) rotate(-25)">
+    <rect x="0" y="0" width="18" height="9" rx="1.5" fill="#F59E0B"/>
+    <line x1="9" y1="9" x2="9" y2="28" stroke="#F59E0B" stroke-width="2"/>
+  </g>
+
+  <!-- 12-cell matrix -->
+  <rect x="160" y="35" width="23" height="20" rx="2" fill="#B91C1C"/><text x="171.5" y="49" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">G</text><rect x="186" y="35" width="23" height="20" rx="2" fill="#B91C1C"/><text x="197.5" y="49" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">G</text><rect x="212" y="35" width="23" height="20" rx="2" fill="#B91C1C"/><text x="223.5" y="49" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">G</text><rect x="238" y="35" width="23" height="20" rx="2" fill="#B91C1C"/><text x="249.5" y="49" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">G</text><rect x="264" y="35" width="23" height="20" rx="2" fill="#B91C1C"/><text x="275.5" y="49" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">G</text><rect x="290" y="35" width="23" height="20" rx="2" fill="#B91C1C"/><text x="301.5" y="49" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">G</text><rect x="160" y="59" width="23" height="20" rx="2" fill="#B91C1C"/><text x="171.5" y="73" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">G</text><rect x="186" y="59" width="23" height="20" rx="2" fill="#B91C1C"/><text x="197.5" y="73" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">G</text><rect x="212" y="59" width="23" height="20" rx="2" fill="#B91C1C"/><text x="223.5" y="73" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">G</text><rect x="238" y="59" width="23" height="20" rx="2" fill="#B91C1C"/><text x="249.5" y="73" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">G</text><rect x="264" y="59" width="23" height="20" rx="2" fill="#475569"/><text x="275.5" y="73" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">ACQ</text><rect x="290" y="59" width="23" height="20" rx="2" fill="#475569"/><text x="301.5" y="73" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.5" font-weight="800">ACQ</text>
+
+  <!-- Bottom callout -->
+  <rect x="156" y="86" width="164" height="15" rx="2" fill="#B91C1C" opacity="0.95"/>
+  <text x="238" y="97" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="7.8" font-weight="800">10 OF 12 GUILTY · TUE NY / WED ASIA</text>
+</svg></div>
+        <div class="kicker-line">
+          <span class="npill np-lead">1</span>
+          <span class="kicker-txt">COURTS · GLOBAL TECH</span>
+        </div>
+        <h2 class="lead-hl">US JURY CONVICTS HUAWEI ON 10 OF 12 FRAUD, SANCTIONS &amp; TRADE-SECRET COUNTS</h2>
+        <p class="lead-body">A federal jury in Brooklyn (Tue in New York, Wed in Asia) convicted Huawei Technologies on 10 of 12 felony counts—bank and wire fraud, Iran sanctions violations, and trade-secret theft conspiracy—after a 12-week trial; sentencing is 14 Sep 2027. <span class="src">(Reuters / DOJ / SCMP)</span></p>
+      </article>
+      <article class="lead-card">
+        <div class="lead-art"><svg viewBox="0 0 326 104" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="326" height="104" fill="#18181B"/>
+  
+  <!-- Searchlight beams -->
+  <polygon points="15,104 90,20 120,20 40,104" fill="#FEF08A" opacity="0.12"/>
+  <polygon points="310,104 220,20 190,20 270,104" fill="#FEF08A" opacity="0.12"/>
+
+  <!-- Top banner -->
+  <rect x="0" y="0" width="225" height="20" fill="#B91C1C"/>
+  <text x="112" y="14" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900" letter-spacing="0.04em">CARTAGENA SIEGE · COLOMBIA STANDOFF</text>
+
+  <!-- Éxito supermarket facade -->
+  <rect x="35" y="28" width="120" height="46" fill="#27272A" stroke="#3F3F46" stroke-width="1"/>
+  <rect x="45" y="32" width="100" height="15" fill="#DC2626" rx="2"/>
+  <text x="95" y="43" text-anchor="middle" fill="#FEF08A" font-family="'Inter', sans-serif" font-size="10" font-weight="900" letter-spacing="0.1em">ÉXITO</text>
+  <!-- Doors/windows -->
+  <rect x="50" y="52" width="24" height="22" fill="#3B82F6" opacity="0.3"/>
+  <rect x="83" y="52" width="24" height="22" fill="#3B82F6" opacity="0.3"/>
+  <rect x="116" y="52" width="24" height="22" fill="#3B82F6" opacity="0.3"/>
+
+  <!-- Armoured cash truck silhouette -->
+  <g transform="translate(180, 42)">
+    <rect x="0" y="6" width="60" height="24" rx="3" fill="#3F3F46" stroke="#71717A" stroke-width="1"/>
+    <rect x="42" y="10" width="18" height="14" rx="2" fill="#52525B"/>
+    <rect x="47" y="12" width="10" height="6" fill="#93C5FD" opacity="0.6"/>
+    <!-- Wheels -->
+    <circle cx="15" cy="30" r="6" fill="#18181B" stroke="#A1A1AA" stroke-width="1.5"/>
+    <circle cx="48" cy="30" r="6" fill="#18181B" stroke="#A1A1AA" stroke-width="1.5"/>
+    <text x="22" y="21" fill="#E4E4E7" font-family="'Consolas', monospace" font-size="6.5" font-weight="700">VALORES</text>
+  </g>
+
+  <!-- Police cordon tape -->
+  <g transform="translate(0, 80) rotate(-1)">
+    <rect x="0" y="0" width="330" height="10" fill="#EAB308"/>
+    <line x1="0" y1="0" x2="330" y2="0" stroke="#000" stroke-width="0.5"/>
+    <line x1="0" y1="10" x2="330" y2="10" stroke="#000" stroke-width="0.5"/>
+    <!-- Diagonal hazard stripes -->
+    <path d="M10 0 L20 10 M30 0 L40 10 M50 0 L60 10 M70 0 L80 10 M90 0 L100 10 M110 0 L120 10 M130 0 L140 10 M150 0 L160 10 M170 0 L180 10 M190 0 L200 10 M210 0 L220 10 M230 0 L240 10 M250 0 L260 10 M270 0 L280 10 M290 0 L300 10 M310 0 L320 10" stroke="#18181B" stroke-width="4"/>
+  </g>
+
+  <!-- Badge -->
+  <rect x="145" y="88" width="175" height="14" rx="2" fill="#B91C1C"/>
+  <text x="232" y="98.5" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="7.6" font-weight="800">25 HOSTAGES HELD · SIEGE INTO WED</text>
+</svg></div>
+        <div class="kicker-line">
+          <span class="npill np-lead">2</span>
+          <span class="kicker-txt">CRISIS · COLOMBIA</span>
+        </div>
+        <h2 class="lead-hl">GUNMEN HOLD 25 HOSTAGES IN CARTAGENA SUPERMARKET SIEGE AFTER ARMOURED-TRUCK RAID</h2>
+        <p class="lead-body">Robbers fleeing a botched armoured-truck raid seized ~30 hostages inside a Cartagena Éxito supermarket (Tue afternoon in Cartagena — Wed in Asia). Snipers sealed the area; 10 hostages were freed by 00:57 UTC Wednesday as the siege continued. <span class="src">(AP / AFP / Sky)</span></p>
+      </article>
+      <article class="lead-card">
+        <div class="lead-art"><svg viewBox="0 0 326 104" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ukr-grad" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#7F1D1D" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#EF4444" stop-opacity="0.85"/>
+    </linearGradient>
+  </defs>
+  <rect width="326" height="104" fill="#1A1215"/>
+  <line x1="10" y1="34" x2="316" y2="34" stroke="#2D1F24" stroke-width="0.8"/>
+  <line x1="10" y1="56" x2="316" y2="56" stroke="#2D1F24" stroke-width="0.8"/>
+  <line x1="10" y1="78" x2="316" y2="78" stroke="#2D1F24" stroke-width="0.8"/>
+  
+  <!-- Top banner -->
+  <rect x="0" y="0" width="220" height="20" fill="#B91C1C"/>
+  <text x="110" y="14" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="9.5" font-weight="900" letter-spacing="0.04em">UKRAINE WAR TOLL · RFE/RL ANALYSIS</text>
+
+  <!-- Area curve 2022 -> 2026 -->
+  <path d="M15 84 L65 77 L125 68 L195 53 L260 38 L310 25 L310 88 L15 88 Z" fill="url(#ukr-grad)"/>
+  <path d="M15 84 L65 77 L125 68 L195 53 L260 38 L310 25" stroke="#EF4444" stroke-width="2.5" fill="none"/>
+  <circle cx="310" cy="25" r="4" fill="#FCA5A5" stroke="#FFF" stroke-width="1.2"/>
+
+  <!-- Timeline markers -->
+  <g font-family="'Inter', sans-serif" font-size="7.5" font-weight="700" fill="#9CA3AF">
+    <text x="18" y="97">2022</text>
+    <text x="120" y="97">2024</text>
+    <text x="250" y="97">NOV 2026</text>
+  </g>
+
+  <!-- Shock callout -->
+  <rect x="145" y="44" width="165" height="20" rx="3" fill="#0F172A" stroke="#EF4444" stroke-width="1.2"/>
+  <text x="227" y="58" text-anchor="middle" fill="#F87171" font-family="'Georgia', serif" font-size="11" font-weight="900">700,000+ KILLED</text>
+</svg></div>
+        <div class="kicker-line">
+          <span class="npill np-lead">3</span>
+          <span class="kicker-txt">CONFLICT · UKRAINE WAR</span>
+        </div>
+        <h2 class="lead-hl">NEW RFE/RL ANALYSIS ESTIMATES OVER 700,000 RUSSIAN SOLDIERS KILLED IN UKRAINE WAR</h2>
+        <p class="lead-body">A new analysis published Wednesday at 01:00 UTC by Radio Free Europe/Radio Liberty estimates that more than 700,000 Russian soldiers have been killed since the full-scale invasion of Ukraine began in February 2022. <span class="src">(RFE/RL)</span></p>
+      </article>
+    </section>
+
+    <section class="feat-grid">
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#7F1D1D"/>
+  <rect x="0" y="0" width="192" height="15" fill="#000000" opacity="0.3"/>
+  <text x="8" y="11" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.2" font-weight="900" letter-spacing="0.05em">AUSTRALIA CPI 4.9%</text>
+  
+    <path d="M15 52 L60 48 L110 38 L165 24" stroke="#FCA5A5" stroke-width="2.2" fill="none"/>
+    <circle cx="165" cy="24" r="3.5" fill="#EF4444" stroke="#FFF" stroke-width="1"/>
+    <g font-family="'Inter', sans-serif" font-size="8" font-weight="800">
+      <text x="15" y="62" fill="#E2E8F0">4.3% SEP</text>
+      <text x="115" y="62" fill="#F87171">4.9% OCT</text>
+    </g>
+    <!-- Lightning bolt + tag -->
+    <polygon points="120,20 128,20 124,28 132,28 122,40 125,30 118,30" fill="#FBBF24"/>
+    <rect x="135" y="24" width="52" height="14" rx="2" fill="#000" opacity="0.6"/>
+    <text x="161" y="34.5" text-anchor="middle" fill="#FBBF24" font-family="'Inter', sans-serif" font-size="7.2" font-weight="900">+25.2% ELEC</text>
+    
+</svg></div>
+        <div class="kicker-sm">
+          <span class="npill np-feat">4</span>
+          <span class="kicker-txt">ECONOMY · AUSTRALIA</span>
+        </div>
+        <h3 class="feat-hl">AUSTRALIA OCTOBER CPI JUMPS TO 4.9% Y/Y AS ELECTRICITY COSTS SURGE +25.2%</h3>
+        <p class="feat-body">Australian Bureau of Statistics data released Wednesday at 00:30 GMT showed October CPI jumping to 4.9% y/y from 4.3% in September (above 4.8% forecast) and trimmed mean rising to 3.8%, driven by electricity +25.2%, transport +10.6%, and housing +6.4%, putting a December RBA hike above 4.85% back in play. <span class="src">(ABS / WSJ / FXStreet)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#0F172A"/>
+  <rect x="0" y="0" width="192" height="15" fill="#000000" opacity="0.3"/>
+  <text x="8" y="11" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.2" font-weight="900" letter-spacing="0.05em">ASIA WED MARKETS</text>
+  
+    <g font-family="'Consolas', monospace" font-size="8.2" font-weight="700">
+      <rect x="10" y="20" width="80" height="18" rx="2" fill="#1E293B"/>
+      <text x="14" y="32" fill="#FCA5A5">-5.86% NVDA</text>
+      
+      <rect x="98" y="20" width="84" height="18" rx="2" fill="#1E293B"/>
+      <text x="102" y="32" fill="#FCA5A5">-2.6% NIKKEI</text>
+
+      <rect x="10" y="42" width="80" height="18" rx="2" fill="#1E293B"/>
+      <text x="14" y="54" fill="#FCA5A5">-6.7% TAIEX</text>
+
+      <rect x="98" y="42" width="84" height="18" rx="2" fill="#1E293B"/>
+      <text x="102" y="54" fill="#34D399">GOLD $3,545</text>
+    </g>
+    
+</svg></div>
+        <div class="kicker-sm">
+          <span class="npill np-feat">5</span>
+          <span class="kicker-txt">MARKETS · ASIA-PACIFIC</span>
+        </div>
+        <h3 class="feat-hl">ASIA MARKETS FALL WEDNESDAY; NIKKEI -2.6%, TAIEX -6.7% AS AI RALLY FADES</h3>
+        <p class="feat-body">Asian markets fell Wednesday (Nikkei -2.6%, Taiex -6.7%, KOSPI -4.5%) after Nvidia slid -5.86% Tuesday in New York (Tue NY, Wed Asia). Gold held at $3,544.54/oz Wed 00:24 GMT; a Dec 25bp Fed hike is priced at 96.4%. <span class="src">(Reuters 24-25 Nov)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#1E3A8A"/>
+  <rect x="0" y="0" width="192" height="15" fill="#000000" opacity="0.3"/>
+  <text x="8" y="11" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.2" font-weight="900" letter-spacing="0.05em">USA · NATO TALKS</text>
+  
+    <!-- NATO 4-point compass star -->
+    <g transform="translate(45, 40)">
+      <circle cx="0" cy="0" r="14" stroke="#60A5FA" stroke-width="1.5" fill="none"/>
+      <polygon points="0,-18 3,-4 18,0 3,4 0,18 -3,4 -18,0 -3,-4" fill="#FFFFFF"/>
+    </g>
+    <rect x="85" y="24" width="95" height="16" rx="2" fill="#1E293B"/>
+    <text x="132" y="35.5" text-anchor="middle" fill="#93C5FD" font-family="'Inter', sans-serif" font-size="7.5" font-weight="800">PALM BEACH, FL</text>
+    <rect x="85" y="44" width="95" height="16" rx="2" fill="#1E293B"/>
+    <text x="132" y="55.5" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="7.5" font-weight="800">TRUMP · RUTTE TALKS</text>
+    
+</svg></div>
+        <div class="kicker-sm">
+          <span class="npill np-feat">6</span>
+          <span class="kicker-txt">DIPLOMACY · USA / NATO</span>
+        </div>
+        <h3 class="feat-hl">TRUMP MEETS NATO CHIEF MARK RUTTE WEDNESDAY IN FLORIDA FOR ALLIANCE TALKS</h3>
+        <p class="feat-body">Donald Trump meets Wednesday in Florida with NATO Secretary General Mark Rutte for bilateral discussions on alliance defence commitments. <span class="src">(Reuters / SCMP)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#1E293B"/>
+  <rect x="0" y="0" width="192" height="15" fill="#000000" opacity="0.3"/>
+  <text x="8" y="11" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.2" font-weight="900" letter-spacing="0.05em">US PCE &amp; Q3 GDP</text>
+  
+    <!-- Clock dial -->
+    <g transform="translate(38, 41)">
+      <circle cx="0" cy="0" r="15" fill="#0F172A" stroke="#94A3B8" stroke-width="1.5"/>
+      <line x1="0" y1="0" x2="0" y2="-9" stroke="#38BDF8" stroke-width="2"/>
+      <line x1="0" y1="0" x2="6" y2="6" stroke="#38BDF8" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="2" fill="#FFF"/>
+    </g>
+    <rect x="68" y="22" width="112" height="18" rx="2" fill="#0F172A"/>
+    <text x="124" y="34.5" text-anchor="middle" fill="#F8FAFC" font-family="'Inter', sans-serif" font-size="8.5" font-weight="900">13:30 GMT RELEASE</text>
+    <rect x="68" y="43" width="112" height="17" rx="2" fill="#0F172A"/>
+    <text x="124" y="55" text-anchor="middle" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="7.5" font-weight="800">96.4% FED DEC HIKE</text>
+    
+</svg></div>
+        <div class="kicker-sm">
+          <span class="npill np-feat">7</span>
+          <span class="kicker-txt">ECONOMY · UNITED STATES</span>
+        </div>
+        <h3 class="feat-hl">US OCT PCE INFLATION &amp; Q3 GDP SECOND ESTIMATE AWAITED WEDNESDAY AT 13:30 GMT</h3>
+        <p class="feat-body">Global markets position as US October PCE inflation and the second estimate of Q3 GDP are awaited Wednesday at 13:30 GMT ahead of the Federal Reserve&#x27;s December policy meeting. <span class="src">(Reuters)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#7F1D1D"/>
+  <rect x="0" y="0" width="192" height="15" fill="#000000" opacity="0.3"/>
+  <text x="8" y="11" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.2" font-weight="900" letter-spacing="0.05em">SHANGHAI LOYALTY</text>
+  
+    <!-- Skyline silhouette -->
+    <polygon points="10,62 18,48 24,48 24,62 30,36 34,36 36,62 44,22 47,22 49,62 55,42 62,42 64,62" fill="#991B1B"/>
+    <rect x="75" y="24" width="108" height="34" rx="2" fill="#450A0A" stroke="#DC2626" stroke-width="1"/>
+    <text x="129" y="37" text-anchor="middle" fill="#FEF2F2" font-family="'Georgia', serif" font-size="8.5" font-weight="900">JIEFANG DAILY WED</text>
+    <text x="129" y="50" text-anchor="middle" fill="#FCA5A5" font-family="'Inter', sans-serif" font-size="7" font-weight="700">PARTY PLEDGES LOYALTY</text>
+    
+</svg></div>
+        <div class="kicker-sm">
+          <span class="npill np-feat">8</span>
+          <span class="kicker-txt">POLITICS · CHINA</span>
+        </div>
+        <h3 class="feat-hl">SHANGHAI PARTY PLEDGES LOYALTY TO BEIJING WEDNESDAY AFTER CHIEF CHEN JINING PROBED</h3>
+        <p class="feat-body">Shanghai&#x27;s municipal party committee pledged loyalty to Beijing on the Wednesday front page of Jiefang Daily, hours after Xinhua announced Tuesday evening that Shanghai party chief and Politburo member Chen Jining was placed under investigation (first Shanghai chief probed since 2006; Tuesday probe is context only). <span class="src">(Reuters / CNN)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#581C87"/>
+  <rect x="0" y="0" width="192" height="15" fill="#000000" opacity="0.3"/>
+  <text x="8" y="11" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.2" font-weight="900" letter-spacing="0.05em">UN 16 DAYS OPENS</text>
+  
+    <!-- Ribbon motif -->
+    <g transform="translate(36, 41)">
+      <circle cx="0" cy="0" r="14" fill="#3B0764" stroke="#D8B4FE" stroke-width="1"/>
+      <path d="M-6 -8 C-2 -14 2 -14 6 -8 C10 0 12 10 14 14 L9 15 L0 3 L-9 15 L-14 14 C-12 10 -10 0 -6 -8 Z" fill="#FB923C"/>
+    </g>
+    <rect x="66" y="22" width="115" height="18" rx="2" fill="#3B0764"/>
+    <text x="123.5" y="34.5" text-anchor="middle" fill="#FB923C" font-family="'Inter', sans-serif" font-size="8.2" font-weight="900">16 DAYS · NOV 25</text>
+    <rect x="66" y="43" width="115" height="17" rx="2" fill="#3B0764"/>
+    <text x="123.5" y="55" text-anchor="middle" fill="#E9D5FF" font-family="'Inter', sans-serif" font-size="7.5" font-weight="800">47,000 VICTIMS / 2025</text>
+    
+</svg></div>
+        <div class="kicker-sm">
+          <span class="npill np-feat">9</span>
+          <span class="kicker-txt">HUMAN RIGHTS · UN / AFRICA</span>
+        </div>
+        <h3 class="feat-hl">UN OPENS 16 DAYS CAMPAIGN AGAINST GENDER VIOLENCE WEDNESDAY; 47,000 KILLED IN 2025</h3>
+        <p class="feat-body">The UN&#x27;s 16 Days of Activism against Gender-Based Violence opened Wednesday (25 Nov, International Day for the Elimination of Violence against Women). A UN Women/UNODC brief published Tuesday found 47,000 women and girls were killed by partners or relatives in 2025 — 129 a day, five an hour, with Africa recording the highest regional toll. <span class="src">(UN Women / UNODC)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#7C2D12"/>
+  <rect x="0" y="0" width="192" height="15" fill="#000000" opacity="0.3"/>
+  <text x="8" y="11" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.2" font-weight="900" letter-spacing="0.05em">SHEIN $100M FTC</text>
+  
+    <!-- Garment tag + gavel -->
+    <g transform="translate(35, 41) rotate(-15)">
+      <polygon points="0,-14 16,-14 22,-5 22,14 0,14" fill="#FFF" stroke="#431407" stroke-width="1"/>
+      <circle cx="6" cy="-6" r="2.5" fill="#7C2D12"/>
+      <text x="11" y="7" text-anchor="middle" fill="#7C2D12" font-family="'Inter', sans-serif" font-size="6.5" font-weight="900">SHEIN</text>
+    </g>
+    <rect x="72" y="24" width="110" height="34" rx="2" fill="#431407" stroke="#EA580C" stroke-width="1"/>
+    <text x="127" y="38" text-anchor="middle" fill="#FED7AA" font-family="'Georgia', serif" font-size="9" font-weight="900">$100M SETTLEMENT</text>
+    <text x="127" y="50" text-anchor="middle" fill="#FDBA74" font-family="'Inter', sans-serif" font-size="7" font-weight="700">FTC DECEPTIVE PRACTICES</text>
+    
+</svg></div>
+        <div class="kicker-sm">
+          <span class="npill np-feat">10</span>
+          <span class="kicker-txt">TECH LAW · UNITED STATES</span>
+        </div>
+        <h3 class="feat-hl">FAST-FASHION RETAILER SHEIN TO PAY $100M TO SETTLE US FTC DECEPTIVE-PRACTICES CLAIMS</h3>
+        <p class="feat-body">Fast-fashion retailer Shein agreed to pay $100 million to settle Federal Trade Commission allegations of deceptive practices. <span class="src">(Manila Times / FTC)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#1E293B"/>
+  <rect x="0" y="0" width="192" height="15" fill="#000000" opacity="0.3"/>
+  <text x="8" y="11" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.2" font-weight="900" letter-spacing="0.05em">MILITARY ESPIONAGE</text>
+  
+    <!-- Classified folder & padlock -->
+    <g transform="translate(35, 40)">
+      <rect x="-16" y="-12" width="32" height="24" rx="2" fill="#334155" stroke="#94A3B8" stroke-width="1"/>
+      <rect x="-16" y="-12" width="12" height="6" fill="#475569"/>
+      <polygon points="0,-5 3,3 -5,-2 5,-2 -3,3" fill="#F59E0B"/>
+    </g>
+    <rect x="68" y="23" width="114" height="17" rx="2" fill="#0F172A"/>
+    <text x="125" y="34.5" text-anchor="middle" fill="#EF4444" font-family="'Inter', sans-serif" font-size="7.5" font-weight="900">CLASSIFIED INTEL SALE</text>
+    <rect x="68" y="43" width="114" height="17" rx="2" fill="#0F172A"/>
+    <text x="125" y="54.5" text-anchor="middle" fill="#CBD5E1" font-family="'Inter', sans-serif" font-size="6.9" font-weight="700">GUILTY PLEA - UP TO 10 YEARS</text>
+    
+</svg></div>
+        <div class="kicker-sm">
+          <span class="npill np-feat">11</span>
+          <span class="kicker-txt">SECURITY · UNITED STATES</span>
+        </div>
+        <h3 class="feat-hl">US ARMY SOLDIER PLEADS GUILTY TO SELLING CLASSIFIED MILITARY INTEL TO CHINESE BUYERS</h3>
+        <p class="feat-body">A US soldier admitted in federal court to selling sensitive military information to buyers in China, the Justice Department said. <span class="src">(Manila Times / DOJ)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#065F46"/>
+  <rect x="0" y="0" width="192" height="15" fill="#000000" opacity="0.3"/>
+  <text x="8" y="11" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.2" font-weight="900" letter-spacing="0.05em">INDIA · EU PACT</text>
+  
+    <!-- Ashoka wheel + EU stars -->
+    <g transform="translate(36, 41)">
+      <circle cx="0" cy="0" r="13" stroke="#34D399" stroke-width="1.2" fill="none"/>
+      <line x1="-13" y1="0" x2="13" y2="0" stroke="#34D399" stroke-width="1"/>
+      <line x1="0" y1="-13" x2="0" y2="13" stroke="#34D399" stroke-width="1"/>
+      <line x1="-9" y1="-9" x2="9" y2="9" stroke="#34D399" stroke-width="1"/>
+      <line x1="-9" y1="9" x2="9" y2="-9" stroke="#34D399" stroke-width="1"/>
+    </g>
+    <rect x="68" y="23" width="114" height="17" rx="2" fill="#064E3B"/>
+    <text x="125" y="34.5" text-anchor="middle" fill="#6EE7B7" font-family="'Inter', sans-serif" font-size="7.8" font-weight="900">BILATERAL TRADE PACT</text>
+    <rect x="68" y="43" width="114" height="17" rx="2" fill="#064E3B"/>
+    <text x="125" y="54.5" text-anchor="middle" fill="#ECFDF5" font-family="'Inter', sans-serif" font-size="7.3" font-weight="700">SIGNING IN DECEMBER</text>
+    
+</svg></div>
+        <div class="kicker-sm">
+          <span class="npill np-feat">12</span>
+          <span class="kicker-txt">TRADE · INDIA / EU</span>
+        </div>
+        <h3 class="feat-hl">INDIA AND EUROPEAN UNION LIKELY TO SIGN BILATERAL FREE TRADE PACT IN DECEMBER</h3>
+        <p class="feat-body">Officials reported Wednesday that India and the European Union are likely to sign a bilateral trade agreement in December. <span class="src">(NDTV)</span></p>
+      </article>
+      <article class="feat-card">
+        <div class="feat-art"><svg viewBox="0 0 192 67" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+  <rect width="192" height="67" fill="#1E3A8A"/>
+  <rect x="0" y="0" width="192" height="15" fill="#000000" opacity="0.3"/>
+  <text x="8" y="11" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="8.2" font-weight="900" letter-spacing="0.05em">RFE/RL SHORTWAVE</text>
+  
+    <!-- Radio tower with arcs -->
+    <g transform="translate(32, 43)">
+      <line x1="0" y1="-14" x2="0" y2="15" stroke="#93C5FD" stroke-width="1.8"/>
+      <polygon points="-8,15 0,-14 8,15" fill="none" stroke="#93C5FD" stroke-width="1"/>
+      <circle cx="0" cy="-14" r="2.5" fill="#F59E0B"/>
+      <!-- Radiating arcs -->
+      <path d="M-6 -18 A10 10 0 0 1 6 -18" stroke="#60A5FA" stroke-width="1.2" fill="none"/>
+      <path d="M-10 -22 A15 15 0 0 1 10 -22" stroke="#60A5FA" stroke-width="1.2" fill="none"/>
+    </g>
+    <rect x="58" y="21" width="124" height="17" rx="2" fill="#0F172A"/>
+    <text x="120" y="32.5" text-anchor="middle" fill="#38BDF8" font-family="'Inter', sans-serif" font-size="7.6" font-weight="900">SHORTWAVE 01:00 UTC</text>
+    <rect x="58" y="42" width="124" height="18" rx="2" fill="#B91C1C"/>
+    <text x="120" y="54" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="7.2" font-weight="800">LESSONS FOR AFGHAN GIRLS</text>
+    
+</svg></div>
+        <div class="kicker-sm">
+          <span class="npill np-feat">13</span>
+          <span class="kicker-txt">MEDIA · AFGHANISTAN</span>
+        </div>
+        <h3 class="feat-hl">RFE/RL RETURNS TO SHORTWAVE WEDNESDAY WITH LESSONS FOR AFGHAN GIRLS</h3>
+        <p class="feat-body">Radio Free Europe/Radio Liberty returned to shortwave radio Wednesday (01:00 UTC) with new educational broadcasts for Afghan girls excluded from school by the Taliban. <span class="src">(RFE/RL)</span></p>
+      </article>
+    </section>
+
+    <section class="bottom-band">
+      <div>
+        <div class="sec-h"><span>WHERE IT HAPPENED</span><span style="color:#64748B;">PINS 1–13</span></div>
+        <div class="map-wrap"><svg viewBox="0 0 282 144" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+    <rect width="282" height="144" fill="#EFECE2" stroke="#C8BFA8" stroke-width="0.8"/>
+    <path d="M26 16 L72 14 L98 20 L93 34 L84 46 L68 54 L61 63 L55 59 L46 47 L35 38 L24 29 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M100 6 L120 6 L115 21 L102 19 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M68 64 L89 67 L104 80 L97 100 L84 123 L76 124 L70 98 L64 76 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M127 18 L163 15 L173 25 L167 36 L147 39 L131 38 L126 29 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M127 23 L133 22 L132 30 L126 29 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M129 42 L158 42 L170 55 L164 78 L154 102 L144 101 L136 78 L125 58 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M165 16 L232 14 L258 24 L249 41 L230 50 L217 61 L204 62 L191 54 L172 46 L164 36 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M247 35 L252 32 L253 41 L247 43 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M219 66 L233 66 L236 72 L221 72 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M226 83 L254 83 L257 103 L239 107 L225 99 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <path d="M267 104 L274 102 L272 114 L265 113 Z" fill="#DFD7C2" stroke="#9D9278" stroke-width="0.6" stroke-linejoin="round"/>
+    <circle cx="257.8" cy="118.6" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="257.8" y="120.69999999999999" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">4</text><circle cx="250.5" cy="45.6" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="250.5" y="47.7" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">5</text><circle cx="78.3" cy="56.6" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="78.3" y="58.7" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">6</text><circle cx="76.2" cy="44.8" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="76.2" y="46.9" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">7</text><circle cx="236.2" cy="50.2" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="236.2" y="52.300000000000004" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">8</text><circle cx="145.8" cy="34.8" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="145.8" y="36.9" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">9</text><circle cx="45.9" cy="45.8" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="45.9" y="47.9" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">10</text><circle cx="59.1" cy="51.1" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="59.1" y="53.2" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">11</text><circle cx="201.5" cy="52.9" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="201.5" y="55.0" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">12</text><circle cx="191.2" cy="43.3" r="5.3" fill="#1D4ED8" stroke="#FFF" stroke-width="0.9"/><text x="191.2" y="45.4" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="6.1" font-weight="800">13</text><circle cx="87.0" cy="37.4" r="6.4" fill="#B91C1C" stroke="#FFF" stroke-width="1.0"/><text x="87.0" y="39.8" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="7.2" font-weight="800">1</text><circle cx="81.9" cy="71.6" r="6.4" fill="#B91C1C" stroke="#FFF" stroke-width="1.0"/><text x="81.9" y="74.0" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="7.2" font-weight="800">2</text><circle cx="164.9" cy="30.4" r="6.4" fill="#B91C1C" stroke="#FFF" stroke-width="1.0"/><text x="164.9" y="32.8" text-anchor="middle" fill="#FFF" font-family="'Inter', sans-serif" font-size="7.2" font-weight="800">3</text>
+  </svg></div>
+        <div class="map-cap">Each pin marks a featured story (1–13) on this page.</div>
+      </div>
+      <div>
+        <div class="sec-h"><span>ALSO ON WEDNESDAY 25 NOVEMBER — 22 MORE STORIES</span><span style="color:#64748B;">WORLD BRIEFS 14–35</span></div>
+        <div class="bcols">
+          <div><div class="brow"><span class="bnum">14</span><b>Tokyo</b> Reuters poll published Wednesday projects the Nikkei 225 reaching 65,000 by June 2027 and 67,500 by year-end after Tuesday&#x27;s 58,644.63 close. <span class="bsrc">(Reuters)</span></div>
+<div class="brow"><span class="bnum">15</span><b>Washington</b> Trump administration Section 301 excess-capacity probe findings and new tariffs on 16 partners including China, EU, India, Japan, Korea, and Vietnam due Wednesday. <span class="bsrc">(Reuters)</span></div>
+<div class="brow"><span class="bnum">16</span><b>Ankara</b> Turkish Air Force helicopter crashes on a training flight near Eskisehir, killing five crew (Tue evening — Wed in Asia). <span class="bsrc">(Reuters)</span></div>
+<div class="brow"><span class="bnum">17</span><b>Beijing</b> China launches Shenzhou-24 crewed spacecraft Wednesday, carrying Pakistan&#x27;s first astronaut to the Tiangong space station. <span class="bsrc">(CGTN)</span></div>
+<div class="brow"><span class="bnum">18</span><b>Paris</b> Gisèle Pelicot slams publisher for using nude images from her rape trial in book promo (Tue evening Paris — Wed in Asia). <span class="bsrc">(SCMP)</span></div>
+<div class="brow"><span class="bnum">19</span><b>Madrid</b> Real Madrid hammer PSV Eindhoven 5-1 in the Champions League as Bellingham scores a stunner; Arsenal and Man City held to draws (Tue night Europe — Wed in Asia). <span class="bsrc">(AFP / Dawn)</span></div>
+<div class="brow"><span class="bnum">20</span><b>Taipei</b> Taiwan shares open lower Wednesday, Taiex down 138 points at the open after Wall Street&#x27;s tech slide. <span class="bsrc">(Focus Taiwan)</span></div>
+<div class="brow"><span class="bnum">21</span><b>Sydney</b> ASX 200 slips 0.9% Wednesday as 4.9% CPI print revives December RBA hike bets above 4.85% cash rate. <span class="bsrc">(ABS / Reuters)</span></div>
+<div class="brow"><span class="bnum">22</span><b>London</b> British police arrest two men after a break-in at Prince William&#x27;s Norfolk home (Tue evening — Wed in Asia). <span class="bsrc">(AFP / SCMP)</span></div>
+<div class="brow"><span class="bnum">23</span><b>Kinshasa</b> Cobalt firms race to beat DR Congo&#x27;s export ban on battery material ahead of November 30 ban deadline. <span class="bsrc">(SCMP)</span></div>
+<div class="brow"><span class="bnum">24</span><b>Seoul</b> Washington reaffirms alliance cooperation after Seoul&#x27;s cabinet reshuffle naming new foreign, unification and spy chiefs. <span class="bsrc">(Korea Herald)</span></div></div>
+          <div><div class="brow"><span class="bnum">25</span><b>Riyadh</b> Houthi strike on Riyadh PIF tower wounds 11 people, Saudi media report (Tue night Riyadh — Wed in Sydney). <span class="bsrc">(Reuters / JPost)</span></div>
+<div class="brow"><span class="bnum">26</span><b>California</b> Extreme flooding threatens northern and central California as king tides peak Wednesday. <span class="bsrc">(Manila Times / Reuters)</span></div>
+<div class="brow"><span class="bnum">27</span><b>Beirut</b> Lebanon border ceasefire monitoring and regional maritime security talks continue on Wednesday, diplomats say. <span class="bsrc">(Reuters)</span></div>
+<div class="brow"><span class="bnum">28</span><b>Seoul</b> Seoul Metro unions reach a last-minute wage deal Wednesday, averting a planned general strike on the capital&#x27;s subway. <span class="bsrc">(Yonhap)</span></div>
+<div class="brow"><span class="bnum">29</span><b>Khartoum</b> UN agencies warn Wednesday of deepening Sudan displacement and acute aid shortages across Darfur camps. <span class="bsrc">(UN / Reuters)</span></div>
+<div class="brow"><span class="bnum">30</span><b>Tokyo</b> South Korea&#x27;s parliamentary leader meets Japan&#x27;s prime minister in Tokyo on Wednesday. <span class="bsrc">(Yonhap)</span></div>
+<div class="brow"><span class="bnum">31</span><b>London</b> Bank of England officials including Governor Andrew Bailey due Wednesday before Parliament&#x27;s Treasury Committee. <span class="bsrc">(Reuters)</span></div>
+<div class="brow"><span class="bnum">32</span><b>Washington</b> US Treasury $44bn 7-year note auction due Wednesday as bond markets await October PCE data. <span class="bsrc">(Reuters)</span></div>
+<div class="brow"><span class="bnum">33</span><b>Mumbai</b> Indian equity markets resume trading Wednesday after Guru Nanak Jayanti holiday, with GIFT Nifty mildly higher. <span class="bsrc">(ET Now / Moneycontrol)</span></div>
+<div class="brow"><span class="bnum">34</span><b>Washington</b> Trump awards Rudy Giuliani the Medal of Freedom, the highest US civilian honour, in a private Oval Office ceremony (Tue afternoon Washington — Wed in Asia). <span class="bsrc">(AP / SCMP)</span></div>
+<div class="brow"><span class="bnum">35</span><b>Gaza</b> UN relief agencies warn Wednesday of acute winter shelter and fuel shortages across displaced Gaza camps. <span class="bsrc">(UN / Reuters)</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="date-check">
+        <b>DATE DISCIPLINE (WED 25 NOV ONLY — EXCLUDED PRIOR-DAY EVENTS):</b> Events count if they occurred or broke on 25 Nov 2026 in any timezone (≥13:00 UTC Tue = Wed 25 Nov in Sydney/Tokyo; tagged inline). Excluded Tue 24 Nov daytime &amp; earlier stories: Asia Tue rally (Taiwan +9.1%, KOSPI +7.5%), Korea Ulleung scramble, Gaza Khan Younis strike (3 killed) &amp; Hamas security chief Naim Abu Nahal killing, Hanoi eatery blast (6 killed), Nepal M5.3 quake, IRGC Hormuz mines, Sarkozy trial order, Mon 23 Nov Nvidia +31.5% surge, NATO Poland AWACS, Libya warship strike, and Sun 22 Nov COP31 collapse. In #8 &amp; #9, Tue's Chen Jining probe and UN femicide report are prior-day context only.
+      </div>
+      <div class="colophon">
+        <span>Every story happened or was first reported on Wednesday 25 November 2026. Officials' counts &amp; claims attributed.</span>
+        <span>Sources: Reuters · AP · AFP · SCMP · FTC · DOJ · RFE/RL · ABS · Focus Taiwan · Yonhap · CGTN · Original drawings</span>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+{
+  "shots": [
+    {
+      "file": "1-patrol-flight.jpg",
+      "scene": "patrol",
+      "seed": 7,
+      "query": "?shot=patrol&seed=7",
+      "caption": "Mid-sortie cruise over Palm Shoal and Ridge Crest with the supply ring ahead"
+    },
+    {
+      "file": "2-ridge-survey.jpg",
+      "scene": "survey",
+      "seed": 11,
+      "query": "?shot=survey&seed=11",
+      "caption": "Ridge Survey along Ridge Crest with passed and active rings"
+    },
+    {
+      "file": "3-rescue-approach.jpg",
+      "scene": "rescue",
+      "seed": 19,
+      "query": "?shot=rescue&seed=19",
+      "caption": "Rescue final approach to the Lagoon Atoll short runway"
+    },
+    {
+      "file": "4-sortie-end.jpg",
+      "scene": "end",
+      "seed": 23,
+      "query": "?shot=end&seed=23",
+      "caption": "Sortie complete banner over the parked aircraft on Palm Shoal"
+    }
+  ]
+}

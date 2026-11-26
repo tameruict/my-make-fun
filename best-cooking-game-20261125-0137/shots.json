@@ -1,0 +1,35 @@
+{
+  "viewport": {
+    "width": 1280,
+    "height": 720,
+    "deviceScaleFactor": 1
+  },
+  "format": "jpeg",
+  "quality": 0.9,
+  "shots": [
+    {
+      "file": "1-service-rush.jpg",
+      "shot": "rush",
+      "seed": 7,
+      "query": "?shot=rush&seed=7"
+    },
+    {
+      "file": "2-prep-chop.jpg",
+      "shot": "chop",
+      "seed": 11,
+      "query": "?shot=chop&seed=11"
+    },
+    {
+      "file": "3-combo-rush.jpg",
+      "shot": "combo",
+      "seed": 19,
+      "query": "?shot=combo&seed=19"
+    },
+    {
+      "file": "4-shift-end.jpg",
+      "shot": "end",
+      "seed": 23,
+      "query": "?shot=end&seed=23"
+    }
+  ]
+}
